@@ -24,7 +24,7 @@ export default function Rightside() {
     
         });
 
-    }, [])
+    }, [user])
     
     return (
         <RightSideContainer>
