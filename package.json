@@ -44,5 +44,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://socila-app.herokuapp.com/api/"
+  "proxy": "https://socila-app.herokuapp.com"
 }
