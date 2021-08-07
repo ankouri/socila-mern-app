@@ -3,7 +3,6 @@ import {
   Grid,
   CardMedia,
   Avatar,
-  FormHelperText,
   IconButton,
   Button,
 } from "@material-ui/core";
@@ -17,7 +16,7 @@ import UserInformations from "./../components/UserInformations";
 import UserFriends from "./../components/UserFriends";
 import axios from "axios";
 import { useParams } from "react-router";
-import { Edit, Label, Check } from "@material-ui/icons";
+import { Edit, Check } from "@material-ui/icons";
 import Skeleton from "./../components/Skeleton/skeleton";
 import ReactDOM from "react-dom";
 const useStyles = makeStyles((theme) => ({

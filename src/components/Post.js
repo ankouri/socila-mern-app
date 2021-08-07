@@ -11,14 +11,12 @@ import {
   Button,
   Menu,
   MenuItem,
-  Fade
 } from "@material-ui/core";
 import { MoreVert, ExpandLess, ExpandMore } from "@material-ui/icons";
 import { format } from "timeago.js";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "./../context/auth/AuthContext";
-import { PostContext } from './../context/post/PostContext';
 
 export default function Post({ post, setDeleted, deleted }) {
   const [voteUp, setVoteUp] = useState(post.votesUp.length);
@@ -29,7 +27,6 @@ export default function Post({ post, setDeleted, deleted }) {
   const [anchorEl, setAnchorEl] = useState(null);
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const { user: currentUser } = useContext(AuthContext);
-  const { dispatch } = useContext(PostContext);
   const handleVoteUp = async () => {
     try {
       await axios.put(`/posts/${post._id}/voteup`, { userId: currentUser._id });

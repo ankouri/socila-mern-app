@@ -58,7 +58,6 @@ export default function Share() {
       console.error(err);
     }
   }
-  console.log(PF+user.profilePicture);
   return (
     <ShareContainer>
       <Card>
