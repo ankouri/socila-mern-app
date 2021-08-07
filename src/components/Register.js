@@ -39,7 +39,7 @@ export default function Register() {
         }
         
         try{
-          await axios.post("/api/auth/register", user);
+          await axios.post("auth/register", user);
           setMessage({type:"success",msg:"Yiiy! your account created successfully. Please login now! "})
         }catch(err){
           setMessage({type:"error",msg:"Oops! registering failed, please try again. "})
