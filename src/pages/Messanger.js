@@ -50,7 +50,7 @@ export default function Messanger() {
         })
 
         //SAVE MESSAGE OBJECT TO DATABASE AND UPDATE MESSAGES STATE
-        const res = await axios.post('/messages',messageObj);
+        const res = await axios.post('/api/messages',messageObj);
         setMessages([...messages, res.data]);
         
     }catch(err){
