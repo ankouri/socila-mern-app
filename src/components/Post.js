@@ -66,7 +66,7 @@ export default function Post({ post, setDeleted, deleted }) {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await axios.get(`/users?userId=${post.userId}`);
+      const res = await axios.get(`/api/users?userId=${post.userId}`);
       setUser(res.data);
     };
     fetchData();
