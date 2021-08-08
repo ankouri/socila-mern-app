@@ -10,7 +10,7 @@ export default function HeaderMessage({ currentChat, user }) {
     const userId = currentChat?.members.find((e) => e !== user);
     const getUser = async () => {
       try {
-        const res = await axios.get(`/users?userId=${userId}`);
+        const res = await axios.get(`/api/users?userId=${userId}`);
         setInfo(res.data);
       } catch (err) {
         console.error(err);

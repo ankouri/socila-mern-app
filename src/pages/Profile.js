@@ -56,8 +56,8 @@ export default function Profile() {
     data.append("name", fileName);
     data.append("file", coverFile);
     try {
-      await axios.post("/upload", data);
-      await axios.put(`/users/${user._id}`, {
+      await axios.post("/api/upload", data);
+      await axios.put(`/api/users/${user._id}`, {
         userId: user._id,
         coverPicture: fileName,
       });
@@ -75,8 +75,8 @@ export default function Profile() {
     data.append("name", fileName);
     data.append("file", profileImg);
     try {
-      await axios.post("/upload", data);
-      await axios.put(`/users/${user._id}`, {
+      await axios.post("/api/upload", data);
+      await axios.put(`/api/users/${user._id}`, {
         userId: user._id,
         profilePicture: fileName,
       });
@@ -101,7 +101,7 @@ export default function Profile() {
 
   const validateBio = async(e) => {
     try {
-      await axios.put(`/users/${user._id}`, {
+      await axios.put(`/api/users/${user._id}`, {
         userId: user._id,
         desc: e.target.value,
       });
@@ -116,7 +116,7 @@ export default function Profile() {
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
-      const res = await axios.get(`/users?username=${username}`);
+      const res = await axios.get(`/api/users?username=${username}`);
       setUser(res.data);
       setLoading(false);
     };

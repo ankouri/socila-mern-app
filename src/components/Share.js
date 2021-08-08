@@ -39,7 +39,7 @@ export default function Share() {
       data.append("file", file);
       newPost.img = fileName;
       try{
-        await axios.post('/upload', data);
+        await axios.post('/api/upload', data);
       }catch(err){
         console.error(err);
       }

@@ -12,7 +12,7 @@ export default function Message({ message, own }) {
     
         const getUser = async() => {
           try{
-            const res = await axios.get(`/users?userId=${message.sender}`);
+            const res = await axios.get(`/api/users?userId=${message.sender}`);
             setCurrentChatUser(res.data);
           }catch(err){
             console.error(err);

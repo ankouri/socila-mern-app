@@ -17,8 +17,8 @@ export default function Feed({ username }) {
     const fetchData = async () => {
       setLoading(true);
       const res = username
-        ? await axios.get(`/posts/profile/${username}`)
-        : await axios.get(`posts/timeline/${user._id}`);
+        ? await axios.get(`/api/posts/profile/${username}`)
+        : await axios.get(`/api/posts/timeline/${user._id}`);
       setPosts(res.data);
       setLoading(false);
       setDeleted(false);

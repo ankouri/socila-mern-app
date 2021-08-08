@@ -11,7 +11,7 @@ export default function UserFriends({ user }) {
   useEffect(()=>{
     const getFriendList = async()=>{
         try{
-           const list = await axios.get('/users/friends/' + user._id);
+           const list = await axios.get('/api/users/friends/' + user._id);
            setFriends(list.data);
         }catch(err){
           console.log(err);

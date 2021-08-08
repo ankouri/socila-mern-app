@@ -29,7 +29,7 @@ export default function Post({ post, setDeleted, deleted }) {
   const { user: currentUser } = useContext(AuthContext);
   const handleVoteUp = async () => {
     try {
-      await axios.put(`/posts/${post._id}/voteup`, { userId: currentUser._id });
+      await axios.put(`/api/posts/${post._id}/voteup`, { userId: currentUser._id });
     } catch (err) {
       console.log(err);
     }
@@ -39,7 +39,7 @@ export default function Post({ post, setDeleted, deleted }) {
 
   const handleVoteDown = async () => {
     try {
-      await axios.put(`/posts/${post._id}/votedown`, {
+      await axios.put(`/api/posts/${post._id}/votedown`, {
         userId: currentUser._id,
       });
     } catch (err) {
@@ -52,7 +52,7 @@ export default function Post({ post, setDeleted, deleted }) {
   const handleDeletePost = async () => {
 
       try{
-        await axios.delete('/posts/'+post._id+'/'+currentUser._id);
+        await axios.delete('/api/posts/'+post._id+'/'+currentUser._id);
         setDeleted(true);
       }catch(err){
         console.error(err);

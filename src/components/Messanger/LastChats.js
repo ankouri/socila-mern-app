@@ -19,7 +19,7 @@ export default function LastChats({ conversation, currentUser }) {
 
     const getUser = async () => {
       try {
-        const res = await axios.get(`/users?userId=${friendId}`);
+        const res = await axios.get(`/api/users?userId=${friendId}`);
         setUser(res.data);
       } catch (err) {
         console.error(err);
