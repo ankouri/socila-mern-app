@@ -3,6 +3,8 @@
   to = "https://socila-app.herokuapp.com/api/:splat"
   status = 200
   force = true
+  
+[[redirects]]
   from = "/socket.io/*"
   to = "https://socket-mern-app.herokuapp.com"
   status = 200
