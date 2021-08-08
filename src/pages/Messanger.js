@@ -42,7 +42,6 @@ export default function Messanger() {
         }
         //FIND RECEIVER ID AND TRIGGER SOCKET SEND MESSAGE TO SEND MESSAGE OBJECT
         const receiverId = currentChat.members.find( member => member !== user._id);
-        console.log('receiver id :'+receiverId);
         socket.current.emit('sendMessage',{
           senderId: user._id,
           receiverId,
@@ -71,6 +70,7 @@ export default function Messanger() {
   },[])
 
   useEffect(() => {
+    console.log(arrivalMessages);
     arrivalMessages && currentChat?.members.includes(arrivalMessages.sender) &&
     setMessages((prev) => [...prev, arrivalMessages]);
   }, [arrivalMessages, currentChat]);
