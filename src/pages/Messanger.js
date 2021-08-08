@@ -88,7 +88,7 @@ export default function Messanger() {
   useEffect(() => {
     const getConversations = async () => {
       try {
-        const res = await axios.get(`/conversations/${user?._id}`);
+        const res = await axios.get(`/api/conversations/${user?._id}`);
         setConversations(res.data);
       } catch (err) {
         console.error(err);
@@ -97,7 +97,7 @@ export default function Messanger() {
     getConversations();
     const getMessages = async() =>{
       try{
-        const res = await axios.get(`/messages/${currentChat?._id}`);
+        const res = await axios.get(`/api/messages/${currentChat?._id}`);
         setMessages(res.data);
       }catch(err){
         console.error(err);
