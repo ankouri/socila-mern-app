@@ -36,7 +36,13 @@ export default function ChatsOnlines({ onlineUsers, currentUserId, setCurrentCha
   const handleClickOnlineUser = async (user) =>{
     try{
       const res = await axios.get(`/conversations/find/${currentUserId}/${user._id}`)
-      setCurrentChat(res.data);
+      if(res.data !== null ){
+        setCurrentChat(res.data);
+      }else{
+        const createCov = await axios.post(`/conversations`,{senderId:currentUserId, receiverId:user._id});
+        console.log(createCov.data);
+      }
+      
     }catch(err){
       console.error(err);
     }

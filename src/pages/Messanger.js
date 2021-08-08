@@ -60,7 +60,7 @@ export default function Messanger() {
   }
 
   useEffect(() => {
-    socket.current = io("ws://localhost:8900");
+    socket.current = io("ws://socket-mern-app.herokuapp.com");
     socket.current.on('getMessage', data => {
       setArrivalMessages({
         sender: data.senderId,

@@ -9,7 +9,7 @@ export default function Rightside() {
     const { user } = useContext(AuthContext);
     const history = useHistory();
     const [onlineUsers, setOnlineUsers] = useState([]);
-    const socket = useRef(io("ws://localhost:8900"));
+    const socket = useRef(io("ws://socket-mern-app.herokuapp.com"));
     
     const handleOnlineUserHome = ()=>{
         history.push('/messanger');
