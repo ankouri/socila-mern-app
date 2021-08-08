@@ -53,7 +53,7 @@ export default function ChatsOnlines({ onlineUsers, currentUserId, setCurrentCha
 
   useEffect(()=>{
     const getFriends = async() =>{
-      const res = await axios.get(`/users/friends/${currentUserId}`);
+      const res = await axios.get(`/api/users/friends/${currentUserId}`);
       setFriends(res.data);
     }
     getFriends();
